@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DEVICE=meilan2
+DEVICE=m2note
 VENDOR=meizu
 
 OUTDIR=vendor/$VENDOR/$DEVICE
