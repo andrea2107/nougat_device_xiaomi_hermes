@@ -83,9 +83,13 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     Torch \
-    libmtk_symbols \
     libperfservicenative \
     libcurl
+
+# Mtk
+PRODUCT_PACKAGES += \
+    libmtk_symbols \
+    asec_helper
 
 # Wifi
 PRODUCT_PACKAGES += \
