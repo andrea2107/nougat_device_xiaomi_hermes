@@ -13,6 +13,9 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 TARGET_OTA_ASSERT_DEVICE := m2note,m2n,meizu_m2_note
 
+# Hack: Include twrp.fstab
+PRODUCT_PACKAGES += device/meizu/m2note/recovery/etc/twrp.fstab:recovery/root/etc/twrp.fstab
+
 TARGET_PROVIDES_INIT_RC := true
 
 # Custom system/core/rootdir files

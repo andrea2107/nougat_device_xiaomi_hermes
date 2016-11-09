@@ -14,7 +14,7 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/mt_usb/musb-hdrc.0.auto
 TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/leds/lcd-backlight/brightness\"
 BOARD_HAS_NO_SELECT_BUTTON := true
 TW_NO_REBOOT_BOOTLOADER := true
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/recovery.fstab
+TARGET_RECOVERY_FSTAB := device/meizu/m2note/rootdir/recovery.fstab
 #TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/etc/twrp.fstab
 TW_THEME := portrait_hdpi
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
@@ -45,7 +45,7 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_RECOVERY_SWIPE := true
 BOARD_SUPPRESS_EMMC_WIPE := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/recovery.fstab
+TARGET_RECOVERY_FSTAB := device/meizu/m2note/rootdir/recovery.fstab
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 endif
