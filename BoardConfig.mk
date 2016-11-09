@@ -1,5 +1,5 @@
-DEVICE_PATH := device/meizu/meilan2
-VENDOR_PATH := vendor/meizu/meilan2
+DEVICE_PATH := device/meizu/m2note
+VENDOR_PATH := vendor/meizu/m2note
 
 USE_CAMERA_STUB := true
 
