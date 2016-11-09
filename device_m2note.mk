@@ -101,10 +101,6 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     audio.r_submix.default
 
-# BT A2DP
-PRODUCT_COPY_FILES += \
-    vendor/meizu/m2note/proprietary/vendor/lib/hw/audio.a2dp.blueangel.so:system/vendor/lib/hw/audio.a2dp.mt6735.so
-
 # Audio components from source
 PRODUCT_PACKAGES += \
     EngineerMode
