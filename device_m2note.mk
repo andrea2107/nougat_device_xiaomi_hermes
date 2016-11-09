@@ -11,12 +11,6 @@ DEVICE_PACKAGE_OVERLAYS += device/meizu/m2note/overlay
 PRODUCT_AAPT_CONFIG := normal xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-    LOCAL_KERNEL := device/meizu/m2note/prebuilt/Image.gz-dtb
-else
-    LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
 TARGET_OTA_ASSERT_DEVICE := m2note,m2n,meizu_m2_note
 
 TARGET_PROVIDES_INIT_RC := true
