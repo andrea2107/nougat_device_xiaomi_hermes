@@ -1,6 +1,6 @@
 # Recovery
 # Uncomment RECOVERY_VARIANT to build twrp
-#RECOVERY_VARIANT=twrp
+RECOVERY_VARIANT=twrp
 
 # TWRP stuff
 ifeq ($(RECOVERY_VARIANT), twrp)
