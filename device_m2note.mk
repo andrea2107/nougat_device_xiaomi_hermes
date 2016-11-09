@@ -89,6 +89,7 @@ PRODUCT_PACKAGES += \
 # Mtk
 PRODUCT_PACKAGES += \
     libmtk_symbols \
+    libbt-vendor \
     asec_helper
 
 # Wifi
