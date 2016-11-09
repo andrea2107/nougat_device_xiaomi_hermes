@@ -17,7 +17,7 @@ on init
     mount tmpfs tmpfs /storage/emulated mode=0755,uid=1023,gid=1023
 
     # Support legacy paths
-    symlink /sdcard /mnt/sdcard
+    # symlink /sdcard /mnt/sdcard
     symlink /sdcard /storage/sdcard0
 
 on post-fs
@@ -25,3 +25,6 @@ on post-fs
     mount rootfs rootfs / shared rec
     mount tmpfs tmpfs /mnt/secure private rec
 
+service asec_helper /system/bin/asec_helper
+	class late_start
+	oneshot

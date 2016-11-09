@@ -540,7 +540,7 @@ on property:sys.usb.config=rndis,via_bypass,adb
     setprop sys.usb.state ${sys.usb.config}
 
 #C2K rndis,bypass,acm
-    on property:sys.usb.config=rndis,via_bypass,acm
+on property:sys.usb.config=rndis,via_bypass,acm
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idVendor ${sys.usb.config}
     write /sys/class/android_usb/android0/idProduct 2038
@@ -550,7 +550,7 @@ on property:sys.usb.config=rndis,via_bypass,adb
     setprop sys.usb.state ${sys.usb.config}
 
 #C2K rndis,bypass,adb,acm
-    on property:sys.usb.config=rndis,via_bypass,adb,acm
+on property:sys.usb.config=rndis,via_bypass,adb,acm
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idVendor ${sys.usb.config}
     write /sys/class/android_usb/android0/idProduct 2039

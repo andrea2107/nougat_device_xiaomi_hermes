@@ -1,9 +1,5 @@
 import /init.environ.rc
 import init.ssd.rc
-import init.no_ssd.rc
-import init.ssd_nomuser.rc
-import init.fon.rc
-import init.trustonic.rc
 
 on early-init
     # Set init and its forked children's oom_adj.
@@ -204,7 +200,7 @@ on post-fs-data
     #mkdir /data/nvram 2770 root system
     # We chown/chmod /nvdata again so because mount is run as root + defaults
     chown root system /nvdata
-    chmod 0771 /nvdata
+    chmod 2770 /nvdata
     symlink /nvdata /data/nvram
     mkdir /nvdata/media 0771 media audio
 
@@ -228,7 +224,7 @@ on post-fs-data
     mkdir /data/misc/perfprofd 0775 root root
     # give system access to wpa_supplicant.conf for backup and restore
     chmod 0660 /data/misc/wifi/wpa_supplicant.conf
-    mkdir /data/local 0751 root root
+    mkdir /data/local 0771 shell shell
     mkdir /data/misc/media 0700 media media
     mkdir /data/misc/vold 0700 root root
     mkdir /data/local/tmp 0771 shell shell
@@ -352,6 +348,7 @@ on post-fs-data
     #NFC
     rm /data/mtknfc_server
 
+    chmod 0660 /dev/remote_ctrl_dev
 ## Custom pos_fs area (END) 
 
     # Separate location for storing security policy files on data
