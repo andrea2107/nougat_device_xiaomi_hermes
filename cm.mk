@@ -8,7 +8,7 @@ PRODUCT_RELEASE_NAME := M2 Note
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/meizu/meilan2/device_m2note.mk)
+$(call inherit-product, device/meizu/m2note/device_m2note.mk)
 
 # Configure dalvik heap
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
