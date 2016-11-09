@@ -79,7 +79,7 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 #recovery
 
 #TARGET_RECOVERY_INITRC := $(DEVICE_PATH)/recovery/init.mt6753.rc
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/fstab.mt6735
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/recovery.fstab
 TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/devices/platform/leds-mt65xx/leds/lcd-backlight/brightness\"
 
 #system.prop
@@ -143,8 +143,11 @@ MTK_HARDWARE := true
 #COMMON_GLOBAL_CFLAGS += -DMTK_HARDWARE -DMTK_AOSP_ENHANCEMENT
 #COMMON_GLOBAL_CPPFLAGS += -DMTK_HARDWARE -DMTK_AOSP_ENHANCEMENT
 
-#EGL settings
+# Display
 USE_OPENGL_RENDERER := true
+TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 BOARD_EGL_CFG := $(DEVICE_PATH)/egl.cfg
 
 # CyanogenMod Hardware Hooks
@@ -153,9 +156,9 @@ BOARD_HARDWARE_CLASS := $(DEVICE_PATH)/cmhw/
 # RIL
 BOARD_RIL_CLASS := ../../../$(DEVICE_PATH)/ril
 
+TARGET_LDPRELOAD += libmtk_symbols.so
+
+# Selinux
 BOARD_SEPOLICY_DIRS := $(DEVICE_PATH)/sepolicy
-
-TARGET_LDPRELOAD += libxlog.so:libmtk_symbols.so
-
 BOARD_SECCOMP_POLICY := $(DEVICE_PATH)/seccomp
 
