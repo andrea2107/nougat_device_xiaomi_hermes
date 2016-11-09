@@ -9,7 +9,7 @@ on early-boot
     chmod 0755 /sys/kernel/debug
 
 on early-init
-    # I'd a... maybe it's... huh?!
+    #TODO: selinux meizu
     #restorecon /sys/class/meizu/ps/ps_calibration
 
 on init
