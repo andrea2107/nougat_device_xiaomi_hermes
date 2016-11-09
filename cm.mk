@@ -13,9 +13,6 @@ $(call inherit-product, device/meizu/m2note/device_m2note.mk)
 # Configure dalvik heap
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
 
-TARGET_SCREEN_HEIGHT := 1920
-TARGET_SCREEN_WIDTH := 1080
-
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := m2note
 PRODUCT_NAME := cm_m2note
