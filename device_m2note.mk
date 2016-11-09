@@ -107,8 +107,8 @@ PRODUCT_COPY_FILES += \
 
 # Audio components from source
 PRODUCT_PACKAGES += \
-    EngineerMode \
-    MtkCamera libDocVfbEngineLib_m81 libpanorama
+    EngineerMode
+#    MtkCamera libDocVfbEngineLib_m81 libpanorama
 
 #libmeizucamera
 
