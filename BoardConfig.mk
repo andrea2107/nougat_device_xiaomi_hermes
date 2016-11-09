@@ -1,6 +1,8 @@
 DEVICE_PATH := device/meizu/m2note
 VENDOR_PATH := vendor/meizu/m2note
 
+TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
+
 USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
@@ -98,6 +100,7 @@ WIFI_DRIVER_FW_PATH_P2P:=P2P
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_MTK := true
 BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL := true
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
 #twrp ( WIP do not use!!! see comments )
 
