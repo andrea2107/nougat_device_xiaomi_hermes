@@ -44,7 +44,7 @@ PRODUCT_COPY_FILES += \
 # Media config
 PRODUCT_COPY_FILES += \
     device/meizu/m2note/etc/media_codecs.xml:system/etc/media_codecs.xml \
-    device/meizu/m2note/media_profiles.xml:system/etc/media_profiles.xml
+    device/meizu/m2note/etc/media_profiles.xml:system/etc/media_profiles.xml
 
 # Permissions
 PRODUCT_COPY_FILES += \
