@@ -87,6 +87,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Torch \
     libperfservicenative \
+    libstlport \
     libcurl
 
 # Mtk
@@ -119,9 +120,9 @@ PRODUCT_PACKAGES += \
 #libmeizucamera
 
 #PRODUCT_PACKAGES += stlport_shared
-PRODUCT_COPY_FILES += \
-    prebuilts/ndk/current/sources/cxx-stl/stlport/libs/arm64-v8a/libstlport_shared.so:system/lib64/libstlport.so \
-    prebuilts/ndk/current/sources/cxx-stl/stlport/libs/armeabi-v7a/libstlport_shared.so:system/lib/libstlport.so
+#PRODUCT_COPY_FILES += \
+#    prebuilts/ndk/current/sources/cxx-stl/stlport/libs/arm64-v8a/libstlport_shared.so:system/lib64/libstlport.so \
+#    prebuilts/ndk/current/sources/cxx-stl/stlport/libs/armeabi-v7a/libstlport_shared.so:system/lib/libstlport.so
 
 PRODUCT_EXTRA_RECOVERY_KEYS += device/meizu/m2note/meizu
 
