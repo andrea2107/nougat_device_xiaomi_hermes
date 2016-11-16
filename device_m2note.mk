@@ -5,49 +5,51 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 $(call inherit-product-if-exists, vendor/meizu/m2note/m2note-vendor.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/meizu/m2note/overlay
+LOCAL_PATH := device/meizu/m2note
+
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Device uses high-density artwork where available
-PRODUCT_AAPT_CONFIG := normal xhdpi
-PRODUCT_AAPT_PREF_CONFIG := xhdpi
+PRODUCT_AAPT_CONFIG := normal xhdpi xxhdpi
+PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 TARGET_OTA_ASSERT_DEVICE := m2note,m2n,meizu_m2_note
 
 # Hack: Include twrp.fstab
-PRODUCT_PACKAGES += device/meizu/m2note/recovery/etc/twrp.fstab:recovery/root/etc/twrp.fstab
+PRODUCT_PACKAGES += $(LOCAL_PATH)/recovery/etc/twrp.fstab:recovery/root/etc/twrp.fstab
 
 TARGET_PROVIDES_INIT_RC := true
 
 # Custom system/core/rootdir files
 PRODUCT_COPY_FILES += \
-    device/meizu/m2note/rootdir/init.rc:root/init.rc \
-    device/meizu/m2note/etc/init/audioserver.rc:system/etc/init/audioserver.rc \
-    device/meizu/m2note/etc/init/mediacodec.rc:system/etc/init/mediacodec.rc \
-    device/meizu/m2note/etc/init/cameraserver.rc:system/etc/init/cameraserver.rc \
-    device/meizu/m2note/etc/init/rild.rc:system/etc/init/rild.rc
+    $(LOCAL_PATH)/rootdir/init.rc:root/init.rc \
+    $(LOCAL_PATH)/etc/init/audioserver.rc:system/etc/init/audioserver.rc \
+    $(LOCAL_PATH)/etc/init/mediacodec.rc:system/etc/init/mediacodec.rc \
+    $(LOCAL_PATH)/etc/init/cameraserver.rc:system/etc/init/cameraserver.rc \
+    $(LOCAL_PATH)/etc/init/rild.rc:system/etc/init/rild.rc
 
 # device rootdir
 PRODUCT_COPY_FILES += \
-    device/meizu/m2note/rootdir/enableswap.sh:root/enableswap.sh \
-    device/meizu/m2note/rootdir/factory_init.project.rc:root/factory_init.project.rc \
-    device/meizu/m2note/rootdir/factory_init.rc:root/factory_init.rc \
-    device/meizu/m2note/rootdir/fstab.charger:root/fstab.charger \
-    device/meizu/m2note/rootdir/fstab.mt6735:root/fstab.mt6735 \
-    device/meizu/m2note/rootdir/init.modem.rc:root/init.modem.rc \
-    device/meizu/m2note/rootdir/init.mt6735.rc:root/init.mt6735.rc \
-    device/meizu/m2note/rootdir/init.mt6735.usb.rc:root/init.mt6735.usb.rc \
-    device/meizu/m2note/rootdir/init.project.rc:root/init.project.rc \
-    device/meizu/m2note/rootdir/init.ssd.rc:root/init.ssd.rc \
-    device/meizu/m2note/rootdir/meta_init.modem.rc:root/meta_init.modem.rc \
-    device/meizu/m2note/rootdir/meta_init.project.rc:root/meta_init.project.rc \
-    device/meizu/m2note/rootdir/meta_init.rc:root/meta_init.rc \
-    device/meizu/m2note/rootdir/ueventd.mt6735.rc:root/ueventd.mt6735.rc \
-    device/meizu/m2note/rootdir/init.recovery.mt6735.rc:root/init.recovery.mt6735.rc
+    $(LOCAL_PATH)/rootdir/enableswap.sh:root/enableswap.sh \
+    $(LOCAL_PATH)/rootdir/factory_init.project.rc:root/factory_init.project.rc \
+    $(LOCAL_PATH)/rootdir/factory_init.rc:root/factory_init.rc \
+    $(LOCAL_PATH)/rootdir/fstab.charger:root/fstab.charger \
+    $(LOCAL_PATH)/rootdir/fstab.mt6735:root/fstab.mt6735 \
+    $(LOCAL_PATH)/rootdir/init.modem.rc:root/init.modem.rc \
+    $(LOCAL_PATH)/rootdir/init.mt6735.rc:root/init.mt6735.rc \
+    $(LOCAL_PATH)/rootdir/init.mt6735.usb.rc:root/init.mt6735.usb.rc \
+    $(LOCAL_PATH)/rootdir/init.project.rc:root/init.project.rc \
+    $(LOCAL_PATH)/rootdir/init.ssd.rc:root/init.ssd.rc \
+    $(LOCAL_PATH)/rootdir/meta_init.modem.rc:root/meta_init.modem.rc \
+    $(LOCAL_PATH)/rootdir/meta_init.project.rc:root/meta_init.project.rc \
+    $(LOCAL_PATH)/rootdir/meta_init.rc:root/meta_init.rc \
+    $(LOCAL_PATH)/rootdir/ueventd.mt6735.rc:root/ueventd.mt6735.rc \
+    $(LOCAL_PATH)/rootdir/init.recovery.mt6735.rc:root/init.recovery.mt6735.rc
 
 # Media config
 PRODUCT_COPY_FILES += \
-    device/meizu/m2note/etc/media_codecs.xml:system/etc/media_codecs.xml \
-    device/meizu/m2note/etc/media_profiles.xml:system/etc/media_profiles.xml
+    $(LOCAL_PATH)/etc/media_codecs.xml:system/etc/media_codecs.xml \
+    $(LOCAL_PATH)/etc/media_profiles.xml:system/etc/media_profiles.xml
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -105,7 +107,7 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf
 
 PRODUCT_COPY_FILES += \
-    device/meizu/m2note/rootdir/etc/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
+    $(LOCAL_PATH)/rootdir/etc/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
 
 # Audio components from source
 PRODUCT_PACKAGES += \
@@ -115,9 +117,7 @@ PRODUCT_PACKAGES += \
 # Mtk/Meizu specifics
 PRODUCT_PACKAGES += EngineerMode
 #    MtkCamera libDocVfbEngineLib_m81 libpanorama
-
-
-PRODUCT_EXTRA_RECOVERY_KEYS += device/meizu/m2note/meizu
+# PRODUCT_EXTRA_RECOVERY_KEYS += $(LOCAL_PATH)/meizu
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
@@ -129,9 +129,10 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.adb.secure=0 \
     persist.service.acm.enable=0 \
     persist.sys.usb.config=mtp \
-    ro.mount.fs=EXT4 \
-    persist.debug.xlog.enable=1
+    ro.mount.fs=EXT4
 
+    #persist.debug.xlog.enable=1
     #ro.mtk_gps_support=1 \
     #ro.mtk_agps_app=1 \
 
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
