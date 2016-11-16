@@ -107,22 +107,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/meizu/m2note/rootdir/etc/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
 
-# Audio componets from source
+# Audio components from source
 PRODUCT_PACKAGES += \
     audio.usb.default \
     audio.r_submix.default
 
-# Audio components from source
-PRODUCT_PACKAGES += \
-    EngineerMode
+# Mtk/Meizu specifics
+PRODUCT_PACKAGES += EngineerMode
 #    MtkCamera libDocVfbEngineLib_m81 libpanorama
 
-#libmeizucamera
-
-#PRODUCT_PACKAGES += stlport_shared
-#PRODUCT_COPY_FILES += \
-#    prebuilts/ndk/current/sources/cxx-stl/stlport/libs/arm64-v8a/libstlport_shared.so:system/lib64/libstlport.so \
-#    prebuilts/ndk/current/sources/cxx-stl/stlport/libs/armeabi-v7a/libstlport_shared.so:system/lib/libstlport.so
 
 PRODUCT_EXTRA_RECOVERY_KEYS += device/meizu/m2note/meizu
 
