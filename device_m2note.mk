@@ -1,11 +1,13 @@
+$(call inherit-product-if-exists, vendor/meizu/m2note/m2note-vendor.mk)
+
+LOCAL_PATH := device/meizu/m2note
+
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
-$(call inherit-product-if-exists, vendor/meizu/m2note/m2note-vendor.mk)
 
-LOCAL_PATH := device/meizu/m2note
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
@@ -13,14 +15,36 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_AAPT_CONFIG := normal xhdpi xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
+# Recovery allowed devices
 TARGET_OTA_ASSERT_DEVICE := m2note,m2n,meizu_m2_note
 
-# Hack: Include twrp.fstab
-PRODUCT_PACKAGES += $(LOCAL_PATH)/recovery/etc/twrp.fstab:recovery/root/etc/twrp.fstab
+# Audio
+PRODUCT_PACKAGES += \
+    audio_policy.default \
+    audio_policy.stub \
+    audio.r_submix.default \
+    audio.usb.default \
+    libaudio-resampler \
+    libtinyalsa
 
-TARGET_PROVIDES_INIT_RC := true
+
+PRODUCT_PACKAGES += \
+    libtinycompress \
+    libtinyxml
+
+#    libion \
+#    libmockdrmcryptoplugin \
+#    libaudio-resampler \
+#    tinymix \
+
+# Media config
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/etc/media_codecs.xml:system/etc/media_codecs.xml \
+    $(LOCAL_PATH)/etc/media_profiles.xml:system/etc/media_profiles.xml
 
 # Custom system/core/rootdir files
+TARGET_PROVIDES_INIT_RC := true
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/init.rc:root/init.rc \
     $(LOCAL_PATH)/etc/init/audioserver.rc:system/etc/init/audioserver.rc \
@@ -46,10 +70,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/ueventd.mt6735.rc:root/ueventd.mt6735.rc \
     $(LOCAL_PATH)/rootdir/init.recovery.mt6735.rc:root/init.recovery.mt6735.rc
 
-# Media config
+# hack for TWRP
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/etc/media_codecs.xml:system/etc/media_codecs.xml \
-    $(LOCAL_PATH)/etc/media_profiles.xml:system/etc/media_profiles.xml
+    $(LOCAL_PATH)/recovery/etc/twrp.fstab:recovery/root/etc/twrp.fstab
+
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -78,13 +102,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
 
-PRODUCT_PACKAGES += \
-    libtinycompress \
-    libtinyxml
-#    libion \
-#    libmockdrmcryptoplugin \
-#    libaudio-resampler \
-
 
 PRODUCT_PACKAGES += \
     Torch \
@@ -109,10 +126,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
 
-# Audio components from source
-PRODUCT_PACKAGES += \
-    audio.usb.default \
-    audio.r_submix.default
 
 # Mtk/Meizu specifics
 PRODUCT_PACKAGES += EngineerMode
