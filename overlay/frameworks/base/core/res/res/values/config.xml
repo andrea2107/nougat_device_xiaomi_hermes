@@ -127,6 +127,10 @@
         <item>"bt-dun"</item>
     </string-array>
 
+    <!-- If supported, are dreams enabled? (by default) -->
+    <bool name="config_dreamsEnabledByDefault">true</bool>
+
+
     <!-- Whether WiFi display is supported by this device.
          There are many prerequisites for this feature to work correctly.
          Here are a few of them:
