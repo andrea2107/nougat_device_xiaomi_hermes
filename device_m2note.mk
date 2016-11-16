@@ -37,6 +37,16 @@ PRODUCT_PACKAGES += \
 #    libaudio-resampler \
 #    tinymix \
 
+# Keyhandler
+PRODUCT_PACKAGES += \
+    com.cyanogenmod.keyhandler
+
+PRODUCT_SYSTEM_SERVER_JARS += com.cyanogenmod.keyhandler
+
+# Never dexopt the keyhandler
+$(call add-product-dex-preopt-module-config,com.cyanogenmod.keyhandler,disable)
+
+
 # Media config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/etc/media_codecs.xml:system/etc/media_codecs.xml \
