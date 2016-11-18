@@ -158,6 +158,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps/slp_conf:system/etc/slp_conf \
     $(LOCAL_PATH)/configs/gps/agps_profiles_conf2.xml:system/etc/agps_profiles_conf2.xml
 
+# Media permissions
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/media/media_codecs.xml:system/etc/media_codecs.xml \
+    $(LOCAL_PATH)/configs/media/media_profiles.xml:system/etc/media_profiles.xml
 
 # Mtk/Meizu specifics
 PRODUCT_PACKAGES += EngineerMode
