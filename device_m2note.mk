@@ -122,6 +122,7 @@ PRODUCT_PACKAGES += \
 # Mtk
 PRODUCT_PACKAGES += \
     libmtk_symbols \
+    libxlog \
     libbt-vendor \
     asec_helper
 
