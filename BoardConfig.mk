@@ -16,7 +16,7 @@ USE_CAMERA_STUB := true
 # Recovery cfg
 -include $(DEVICE_PATH)/RecoveryConfig.mk
 
-TARGET_LDPRELOAD := libmtk_symbols.so
+TARGET_LDPRELOAD := libxlog.so:libmtk_symbols.so
 
 # Platform
 ARCH_ARM_HAVE_TLS_REGISTER := true
