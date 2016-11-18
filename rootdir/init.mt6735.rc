@@ -13,7 +13,7 @@ on early-init
     #restorecon /sys/class/meizu/ps/ps_calibration
 
 on init
-    export LD_PRELOAD "libmtk_symbols.so"
+    export LD_PRELOAD "libxlog.so:libmtk_symbols.so"
 
     # Platform-specific mount points
     mkdir /protect_f 0771 system system
