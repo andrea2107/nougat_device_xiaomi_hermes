@@ -4,7 +4,7 @@ echo $1
 rootdirectory="$PWD"
 # ---------------------------------
 
-dirs="frameworks/av frameworks/native system/core"
+dirs="frameworks/av frameworks/base frameworks/native frameworks/opt/telephony system/core"
 #dirs="bionic frameworks/av frameworks/base frameworks/native hardware/libhardware system/core system/netd system/vold"
 
 VENDOR=meizu
