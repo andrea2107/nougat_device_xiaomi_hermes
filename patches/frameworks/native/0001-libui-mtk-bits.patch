@@ -1,14 +1,13 @@
-From bc3db8044d0438d5368e342bfd33de84c2b0f147 Mon Sep 17 00:00:00 2001
+From 069e834750671793572241805245e278e71fc88d Mon Sep 17 00:00:00 2001
 From: Moyster <oysterized@gmail.com>
-Date: Fri, 18 Nov 2016 21:15:36 +0100
+Date: Sun, 20 Nov 2016 02:05:29 +0100
 Subject: [PATCH] libui: mtk bits
 
-Change-Id: I141eb6b4cc50b08f718638be1be513bd20c0add4
+Change-Id: Ie0e38282d95270cd1aa938c9d754010201e39b93
 ---
  include/ui/Fence.h                                 |   5 +
  include/ui/mediatek/IDumpTunnel.h                  |  49 +++++++++
  include/ui/mediatek/RefBaseDump.h                  |  63 ++++++++++++
- libs/ui/.GraphicBufferMapper.cpp.swp               | Bin 0 -> 16384 bytes
  libs/ui/Android.mk                                 |  15 +++
  libs/ui/mediatek/Fence.cpp                         |  59 +++++++++++
  libs/ui/mediatek/IDumpTunnel.cpp                   | 114 +++++++++++++++++++++
@@ -17,10 +16,9 @@ Change-Id: I141eb6b4cc50b08f718638be1be513bd20c0add4
  libs/ui/mediatek/test/RefBaseDumpTunnel/Android.mk |  15 +++
  .../test/RefBaseDumpTunnel/RefBaseDumpTunnel.cpp   | 105 +++++++++++++++++++
  .../test/RefBaseDumpTunnel/RefBaseDumpTunnel.h     |  17 +++
- 12 files changed, 554 insertions(+)
+ 11 files changed, 554 insertions(+)
  create mode 100644 include/ui/mediatek/IDumpTunnel.h
  create mode 100644 include/ui/mediatek/RefBaseDump.h
- create mode 100644 libs/ui/.GraphicBufferMapper.cpp.swp
  create mode 100644 libs/ui/mediatek/Fence.cpp
  create mode 100644 libs/ui/mediatek/IDumpTunnel.cpp
  create mode 100644 libs/ui/mediatek/RefBaseDump.cpp
@@ -169,68 +167,6 @@ index 0000000..8431544
 +
 +};
 +#endif
-diff --git a/libs/ui/.GraphicBufferMapper.cpp.swp b/libs/ui/.GraphicBufferMapper.cpp.swp
-new file mode 100644
-index 0000000000000000000000000000000000000000..670a698fa0fddb291646df9ec5dc2cdceb8399a1
-GIT binary patch
-literal 16384
-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
-SDB1kHv?hV5f-YjY%6|d4aJ9hz
-
-literal 0
-HcmV?d00001
-
 diff --git a/libs/ui/Android.mk b/libs/ui/Android.mk
 index 2b16365..fc8460f 100644
 --- a/libs/ui/Android.mk
