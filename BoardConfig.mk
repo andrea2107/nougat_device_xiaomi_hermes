@@ -8,6 +8,8 @@ USE_CAMERA_STUB := true
 # Pre-Nougat cam HALv1
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 
+TARGET_NEEDS_TEXT_RELOCATIONS := true
+
 # inherit from the proprietary version
 -include $(VENDOR_PATH)/BoardConfigVendor.mk
 
