@@ -6,9 +6,7 @@ TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 # Camera
 USE_CAMERA_STUB := true
 # Pre-Nougat cam HALv1
-#TARGET_HAS_LEGACY_CAMERA_HAL1 := true
-#media.stagefright.legacyencoder=true
-#media.stagefright.less-secure=true
+TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 
 # inherit from the proprietary version
 -include $(VENDOR_PATH)/BoardConfigVendor.mk

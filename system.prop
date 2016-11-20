@@ -13,6 +13,10 @@ ro.mediatek.wlan.wsc=1
 ro.mediatek.wlan.p2p=1
 mediatek.wlan.ctia=0
 
+# Camera legacy
+media.stagefright.legacyencoder=true
+media.stagefright.less-secure=true
+
 #
 wifi.tethering.interface=ap0
 #
