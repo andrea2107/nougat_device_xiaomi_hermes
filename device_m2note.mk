@@ -193,8 +193,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/telephony/selective-spn-conf.xml:system/etc/selective-spn-conf.xml
 
 # Gello
-PRODUCT_PACKAGES += \
-    Gello
+#PRODUCT_PACKAGES += \
+#    Gello
 
 # Snap
 PRODUCT_PACKAGES += \
