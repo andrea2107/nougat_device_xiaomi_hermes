@@ -18,6 +18,27 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # Recovery allowed devices
 TARGET_OTA_ASSERT_DEVICE := m2note,m2n,meizu_m2_note
 
+# Mtk
+PRODUCT_PACKAGES += \
+   libmtk_symbols \
+   libstlport \
+   libxlog
+
+PRODUCT_PACKAGES += \
+    libperfservicenative
+    #EngineerMode
+
+PRODUCT_PACKAGES += \
+    libcurl \
+    libtinycompress \
+    libtinyxml \
+    libnl_2
+
+
+# Hack to fix asec on emulated sdcard
+PRODUCT_PACKAGES += \
+    asec_helper
+
 # Audio
 PRODUCT_PACKAGES += \
     audio_policy.default \
@@ -27,20 +48,28 @@ PRODUCT_PACKAGES += \
     libaudio-resampler \
     libtinyalsa
 
+#    libion \
+#    libmockdrmcryptoplugin \
+#    libaudio-resampler \
+#    tinymix \
+
 # Audio config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/configs/audio/audio_device.xml:system/etc/audio_device.xml \
     $(LOCAL_PATH)/configs/audio/audio_effects.conf:system/etc/audio_effects.conf
-
+# Bluetooth
 PRODUCT_PACKAGES += \
-    libtinycompress \
-    libtinyxml
+    audio.a2dp.default
+PRODUCT_PACKAGES += \
+    libbt-vendor
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/bluetooth/auto_pair_devlist.conf:system/etc/bluetooth/auto_pair_devlist.conf \
+    $(LOCAL_PATH)/configs/bluetooth/bt_stack.conf.debug:system/etc/bluetooth/bt_stack.conf.debug \
+    $(LOCAL_PATH)/configs/bluetooth/bt_did.conf:system/etc/bluetooth/bt_did.conf \
+    $(LOCAL_PATH)/configs/bluetooth/bt_stack.conf:system/etc/bluetooth/bt_stack.conf \
+    $(LOCAL_PATH)/configs/bluetooth/bt_stack.conf.sqc:system/etc/bluetooth/bt_stack.conf.sqc
 
-#    libion \
-#    libmockdrmcryptoplugin \
-#    libaudio-resampler \
-#    tinymix \
 
 # Keyhandler
 PRODUCT_PACKAGES += \
@@ -50,12 +79,6 @@ PRODUCT_SYSTEM_SERVER_JARS += com.cyanogenmod.keyhandler
 
 # Never dexopt the keyhandler
 $(call add-product-dex-preopt-module-config,com.cyanogenmod.keyhandler,disable)
-
-
-# Media config
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/etc/media_codecs.xml:system/etc/media_codecs.xml \
-    $(LOCAL_PATH)/etc/media_profiles.xml:system/etc/media_profiles.xml
 
 # Custom system/core/rootdir files
 TARGET_PROVIDES_INIT_RC := true
@@ -116,24 +139,22 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
 
+# Media config
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/etc/media_codecs.xml:system/etc/media_codecs.xml \
+    $(LOCAL_PATH)/etc/media_profiles.xml:system/etc/media_profiles.xml
 
-PRODUCT_PACKAGES += \
-    Torch \
-    libperfservicenative \
-    libstlport \
-    libcurl
+PRODUCT_TAGS += dalvik.gc.type-precise
 
-# Mtk
+# Charger
 PRODUCT_PACKAGES += \
-    libmtk_symbols \
-    libxlog \
-    libbt-vendor \
-    asec_helper
+    charger_res_images
 
 # Wifi
 PRODUCT_PACKAGES += \
     libwpa_client \
     hostapd \
+    hostapd_cli \
     dhcpcd.conf \
     wpa_supplicant \
     wpa_supplicant.conf
@@ -144,18 +165,22 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/hostapd/hostapd.accept:system/etc/hostapd/hostapd.accept \
     $(LOCAL_PATH)/configs/hostapd/hostapd.deny:system/etc/hostapd/hostapd.deny
 
-# Bluetooth
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/bluetooth/auto_pair_devlist.conf:system/etc/bluetooth/auto_pair_devlist.conf \
-    $(LOCAL_PATH)/configs/bluetooth/bt_stack.conf.debug:system/etc/bluetooth/bt_stack.conf.debug \
-    $(LOCAL_PATH)/configs/bluetooth/bt_did.conf:system/etc/bluetooth/bt_did.conf \
-    $(LOCAL_PATH)/configs/bluetooth/bt_stack.conf:system/etc/bluetooth/bt_stack.conf \
-    $(LOCAL_PATH)/configs/bluetooth/bt_stack.conf.sqc:system/etc/bluetooth/bt_stack.conf.sqc
+# Torch
+PRODUCT_PACKAGES += \
+    Torch
 
-# Gps
+# STk
+PRODUCT_PACKAGES += \
+    Stk
+
+# GPS
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps/slp_conf:system/etc/slp_conf \
     $(LOCAL_PATH)/configs/gps/agps_profiles_conf2.xml:system/etc/agps_profiles_conf2.xml
+
+PRODUCT_PACKAGES += \
+    librs_jni \
+    com.android.future.usb.accessory
 
 # Media permissions
 PRODUCT_COPY_FILES += \
@@ -167,8 +192,25 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/telephony/ecc_list.xml:system/etc/ecc_list.xml \
     $(LOCAL_PATH)/configs/telephony/selective-spn-conf.xml:system/etc/selective-spn-conf.xml
 
-# Mtk/Meizu specifics
-PRODUCT_PACKAGES += EngineerMode
+# Gello
+PRODUCT_PACKAGES += \
+    Gello
+
+# Snap
+PRODUCT_PACKAGES += \
+    Snap
+
+# Filesystem management tools
+PRODUCT_PACKAGES += \
+    e2fsck \
+    fibmap.f2fs \
+    fsck.f2fs \
+    mkfs.f2fs \
+    make_ext4fs \
+    resize2fs \
+    setup_fs
+
+# Meizu specifics
 #    MtkCamera libDocVfbEngineLib_m81 libpanorama
 # PRODUCT_EXTRA_RECOVERY_KEYS += $(LOCAL_PATH)/meizu
 
