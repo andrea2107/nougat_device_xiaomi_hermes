@@ -20,15 +20,12 @@ TARGET_OTA_ASSERT_DEVICE := m2note,m2n,meizu_m2_note
 
 # Mtk
 PRODUCT_PACKAGES += \
-   libmtk_symbols \
-   libstlport \
-   libxlog
-
-PRODUCT_PACKAGES += \
+    libmtk_symbols \
     libperfservicenative
     #EngineerMode
 
 PRODUCT_PACKAGES += \
+    libstlport \
     libcurl \
     libtinycompress \
     libtinyxml \
@@ -226,7 +223,6 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     persist.sys.usb.config=mtp \
     ro.mount.fs=EXT4
 
-    #persist.debug.xlog.enable=1
     #ro.mtk_gps_support=1 \
     #ro.mtk_agps_app=1 \
 

@@ -26,7 +26,7 @@ TARGET_NO_BOOTLOADER := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_NO_FACTORYIMAGE := true
 
-TARGET_LDPRELOAD += libxlog.so:libmtk_symbols.so
+TARGET_LDPRELOAD += libmtk_symbols.so
 
 # CPU
 TARGET_ARCH := arm64
