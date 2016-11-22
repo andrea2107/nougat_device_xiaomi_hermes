@@ -25,6 +25,7 @@ type DW9714A_device, dev_type;
 type LC898122AF_device, dev_type;
 type LC898212AF_device, dev_type;
 type BU6429AF_device, dev_type;
+type BU64245_device, dev_type;
 type AD5820AF_device, dev_type;
 type DW9718AF_device, dev_type;
 type BU64745GWZAF_device, dev_type;
