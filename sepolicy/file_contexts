@@ -402,3 +402,6 @@
 
 # Wallpaper file for smartbook
 /data/system/users/[0-9]+/smartbook_wallpaper	u:object_r:wallpaper_file:s0
+
+# Live Display
+/sys/devices/platform/mtk_disp_mgr.0/rgb u:object_r:livedisplay_sysfs:s0
