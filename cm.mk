@@ -2,7 +2,7 @@
 #$(call inherit-product, vendor/cm/config/gsm.mk)
 
 # Release name
-PRODUCT_RELEASE_NAME := hermes
+PRODUCT_RELEASE_NAME := Redmi note 2
 
 EXTENDED_FONT_FOOTPRINT := true
 
