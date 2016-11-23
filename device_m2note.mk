@@ -82,10 +82,10 @@ TARGET_PROVIDES_INIT_RC := true
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/init.rc:root/init.rc \
-    $(LOCAL_PATH)/etc/init/audioserver.rc:system/etc/init/audioserver.rc \
-    $(LOCAL_PATH)/etc/init/mediacodec.rc:system/etc/init/mediacodec.rc \
-    $(LOCAL_PATH)/etc/init/cameraserver.rc:system/etc/init/cameraserver.rc \
-    $(LOCAL_PATH)/etc/init/rild.rc:system/etc/init/rild.rc
+    $(LOCAL_PATH)/rootdir/init/audioserver.rc:system/etc/init/audioserver.rc \
+    $(LOCAL_PATH)/rootdir/init/mediacodec.rc:system/etc/init/mediacodec.rc \
+    $(LOCAL_PATH)/rootdir/init/cameraserver.rc:system/etc/init/cameraserver.rc \
+    $(LOCAL_PATH)/rootdir/init/rild.rc:system/etc/init/rild.rc
 
 # device rootdir
 PRODUCT_COPY_FILES += \
