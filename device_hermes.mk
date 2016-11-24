@@ -93,10 +93,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/factory_init.project.rc:root/factory_init.project.rc \
     $(LOCAL_PATH)/rootdir/factory_init.rc:root/factory_init.rc \
     $(LOCAL_PATH)/rootdir/fstab.charger:root/fstab.charger \
-    $(LOCAL_PATH)/rootdir/fstab.mt6795:root/fstab.mt6735 \
+    $(LOCAL_PATH)/rootdir/fstab.mt6795:root/fstab.mt6795 \
     $(LOCAL_PATH)/rootdir/init.modem.rc:root/init.modem.rc \
-    $(LOCAL_PATH)/rootdir/init.mt6795.rc:root/init.mt6735.rc \
-    $(LOCAL_PATH)/rootdir/init.mt6795.usb.rc:root/init.mt6735.usb.rc \
+    $(LOCAL_PATH)/rootdir/init.mt6795.rc:root/init.mt6795.rc \
+    $(LOCAL_PATH)/rootdir/init.mt6795.usb.rc:root/init.mt6795.usb.rc \
     $(LOCAL_PATH)/rootdir/init.project.rc:root/init.project.rc \
     $(LOCAL_PATH)/rootdir/init.ssd.rc:root/init.ssd.rc \
     $(LOCAL_PATH)/rootdir/meta_init.modem.rc:root/meta_init.modem.rc \
