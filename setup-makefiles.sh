@@ -1,7 +1,7 @@
 #!/bin/bash
 
-DEVICE=m2note
-VENDOR=meizu
+DEVICE=hermes
+VENDOR=xiaomi
 
 OUTDIR=vendor/$VENDOR/$DEVICE
 MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk

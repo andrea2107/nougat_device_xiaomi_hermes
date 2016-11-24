@@ -1,6 +1,6 @@
-# mt6753 platform boardconfig
-DEVICE_PATH := device/meizu/m2note
-VENDOR_PATH := vendor/meizu/m2note
+# mt6795 platform boardconfig thanks to moyster
+DEVICE_PATH := device/xiaomi/hermes
+VENDOR_PATH := vendor/xiaomi/hermes
 
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
@@ -21,7 +21,7 @@ TARGET_PROVIDES_INIT_RC := true
 
 # Platform
 ARCH_ARM_HAVE_TLS_REGISTER := true
-TARGET_BOARD_PLATFORM := mt6753
+TARGET_BOARD_PLATFORM := mt6795
 TARGET_NO_BOOTLOADER := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_NO_FACTORYIMAGE := true
@@ -46,7 +46,7 @@ TARGET_USES_64_BIT_BINDER := true
 
 TARGET_CPU_CORTEX_A53 := true
 
-TARGET_BOOTLOADER_BOARD_NAME := mt6735
+TARGET_BOOTLOADER_BOARD_NAME := mt6795
 
 # MTK Hardware
 BOARD_HAS_MTK_HARDWARE := true
@@ -72,10 +72,10 @@ BOARD_MKBOOTIMG_ARGS := --board $(BOARD_NAME) --kernel_offset $(BOARD_KERNEL_OFF
 MTK_APPENDED_DTB_SUPPORT := yes
 
 # Kernel properties
-TARGET_KERNEL_SOURCE := kernel/meizu/m2note
+TARGET_KERNEL_SOURCE := kernel/xiaomi/hermes
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_CONFIG := cm13_m2note_defconfig
+TARGET_KERNEL_CONFIG := cyanogenmod-hermes_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 MTK_APPENDED_DTB_SUPPORT := yes
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
