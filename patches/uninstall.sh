@@ -7,8 +7,8 @@ rootdirectory="$PWD"
 dirs="bionic frameworks/av frameworks/base frameworks/native frameworks/opt/telephony system/core"
 #dirs="bionic external/jpeg frameworks/av frameworks/base frameworks/native frameworks/rs frameworks/opt/telephony hardware/libhardware system/core system/netd system/vold"
 
-VENDOR=meizu
-DEVICE=m2note
+VENDOR=xiaomi
+DEVICE=hermes
 
 for dir in $dirs ; do
 	cd $rootdirectory
