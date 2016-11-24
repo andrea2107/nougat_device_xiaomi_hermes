@@ -28,7 +28,7 @@ index 480e630..00cda84 100755
          { "ro.boot.baseband",   "ro.baseband",   "unknown", },
          { "ro.boot.bootloader", "ro.bootloader", "unknown", },
 -        { "ro.boot.hardware",   "ro.hardware",   "unknown", },
-+        { "ro.boot.hardware",   "ro.hardware",   "mt6753", },
++        { "ro.boot.hardware",   "ro.hardware",   "mt6795", },
  #ifndef IGNORE_RO_BOOT_REVISION
          { "ro.boot.revision",   "ro.revision",   "0", },
  #endif
