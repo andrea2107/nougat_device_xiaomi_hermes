@@ -15,6 +15,7 @@ on post-fs
 
 
 service permission_check /system/bin/permission_check
+    class main
     user root
     group system radio
     oneshot
@@ -37,7 +38,7 @@ service ccci_rpcd /system/bin/ccci_rpcd 0
 on post-fs-data
 
 #SeLinux
-    mkdir /data/ccci_cfg 0770 system radio
+    mkdir /data/ccci_cfg 0700 system radio
     restorecon /data/ccci_cfg
     restorecon_recursive /protect_f
     restorecon_recursive /protect_s
