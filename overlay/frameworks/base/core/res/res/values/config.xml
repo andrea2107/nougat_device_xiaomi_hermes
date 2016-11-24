@@ -168,6 +168,9 @@
     <integer name="config_screenBrightnessDoze">2</integer>
     <bool name="config_dozeAfterScreenOff">true</bool>
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
+    <!-- Auto Power Modes is required for Doze and App Standby -->
+    <bool name="config_enableAutoPowerModes">true</bool>
+
     <bool name="config_intrusiveNotificationLed">true</bool>
 
     <!-- Defines the system property to set for performance profile xe: sys.cpu.modes. Leave it
