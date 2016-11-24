@@ -217,7 +217,6 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.telephony.ril_class=MT6753 \
     ro.telephony.ril.config=fakeiccid \
     persist.service.acm.enable=0 \
-    persist.sys.usb.config=mtp \
     ro.mount.fs=EXT4
 
     #ro.mtk_gps_support=1 \
