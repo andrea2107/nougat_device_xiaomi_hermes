@@ -4,7 +4,7 @@ echo $1
 rootdirectory="$PWD"
 # ---------------------------------
 
-dirs="bionic frameworks/av frameworks/base frameworks/native frameworks/opt/telephony system/core"
+dirs="bionic frameworks/av frameworks/base frameworks/native frameworks/opt/telephony system/core system/netd"
 #dirs="bionic frameworks/av frameworks/base frameworks/native hardware/libhardware system/core system/netd system/vold"
 
 VENDOR=xiaomi
