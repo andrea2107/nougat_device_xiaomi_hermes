@@ -12,3 +12,4 @@ sh device/xiaomi/hermes/patches/uninstall.sh
 credits:
 -moyster
 -WisniaPL
+-TryHardDood
