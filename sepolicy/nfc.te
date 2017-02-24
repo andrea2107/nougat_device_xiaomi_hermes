@@ -36,7 +36,6 @@ allow nfc mt6605_device:chr_file { read write getattr open ioctl };
 allow nfc nfc_data_file:dir { write remove_name add_name search create setattr };
 allow nfc nfc_data_file:file { read getattr open rename write ioctl setattr create unlink };
 
-
 # ==============================================
 # Date      : 2014/10/15  
 # Operation : Refine
@@ -62,6 +61,14 @@ allow nfc surfaceflinger:file { read getattr open };
 allow nfc node:tcp_socket node_bind;
 allow nfc port:tcp_socket name_bind;
 allow nfc self:tcp_socket { setopt read bind create accept write getattr connect getopt listen };
+
+
+# ==============================================
+# Date      : 2014/10/15  
+# Operation : Refine
+# Purpose   : For Gallery3d
+
+#allow nfc init:binder { transfer };
 
 
 # ==============================================

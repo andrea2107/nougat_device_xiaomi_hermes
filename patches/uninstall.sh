@@ -1,23 +1,19 @@
-#!/bin/sh
-
 echo $1
 rootdirectory="$PWD"
 # ---------------------------------
 
-dirs="bionic frameworks/av frameworks/base frameworks/native frameworks/opt/telephony system/core system/netd"
-#dirs="bionic external/jpeg frameworks/av frameworks/base frameworks/native frameworks/rs frameworks/opt/telephony hardware/libhardware system/core system/netd system/vold"
-
-VENDOR=xiaomi
-DEVICE=hermes
+dirs="bionic system/sepolicy frameworks/av frameworks/base frameworks/native frameworks/opt/telephony frameworks/opt/net/ims hardware/libhardware packages/apps/Settings packages/services/Telecomm packages/services/Telephony system/netd system/core system/bt system/sepolicy"
 
 for dir in $dirs ; do
 	cd $rootdirectory
 	cd $dir
-	echo -e "Cleaning $dir patches...\n"
-	git reset --hard && git clean -df
+	echo "Reverting $dir patches..."
+	#git apply --reverse $rootdirectory/device/LeTV/x500/patches/$dir/*.patch
+	git reset --hard
+	git clean -f -d
+	echo " "
 done
 
 # -----------------------------------
-echo -e "Done !\n"
+echo "Changing to build directory..."
 cd $rootdirectory
-

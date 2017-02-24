@@ -1,24 +1,17 @@
-#!/bin/sh
-
 echo $1
 rootdirectory="$PWD"
 # ---------------------------------
 
-dirs="bionic frameworks/av frameworks/base frameworks/native frameworks/opt/telephony system/core system/netd"
-#dirs="bionic frameworks/av frameworks/base frameworks/native hardware/libhardware system/core system/netd system/vold"
-
-VENDOR=xiaomi
-DEVICE=hermes
+dirs="bionic frameworks/av frameworks/base frameworks/native hardware/libhardware packages/apps/Settings system/core system/netd system/sepolicy"
 
 for dir in $dirs ; do
 	cd $rootdirectory
 	cd $dir
-	echo -e "Applying $dir patches...\n"
-	#git am $rootdirectory/device/$VENDOR/$DEVICE/patches/$dir/*.patch
-	git apply $rootdirectory/device/$VENDOR/$DEVICE/patches/$dir/*.patch
+	echo "Applying $dir patches..."
+	git apply $rootdirectory/device/LeTV/x500/patches/$dir/*.patch
+	echo " "
 done
 
 # -----------------------------------
-echo -e "Done !\n"
+echo "Changing to build directory..."
 cd $rootdirectory
-
